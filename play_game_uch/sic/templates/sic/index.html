@@ -1,0 +1,27 @@
+<!-- templates/sic/index.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'sic/css/style.css' %}">
+    <title>Статистика</title>
+</head>
+<body>
+    <h1>Статистика</h1>
+    <div class="list">
+        <ul>
+            {% for stat in stats %}
+                <li>{{ stat.user }}</li>
+                <li>Верно решенных: {{ stat.amount_true }}</li>
+                <li>Неверно решенных: {{ stat.amount_false }}</li>
+                <li>Количество всех тестов: {{ stat.amount_all }}</li>
+                <hr>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

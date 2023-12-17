@@ -1,0 +1,26 @@
+<!-- templates/sic/index.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'sic/css/style.css' %}">
+    <title>Статистика пользователя</title>
+</head>
+<body>
+
+  <h2>Статистика пользователя</h2>
+
+  {% if stats %}
+    <p>User ID: {{ stats.user}}</p>
+    <p>Количество тестов: {{ stats.amount_all }}</p>
+    <p>Верно решенных: {{ stats.amount_true }}</p>
+    <p>Неверно решенных: {{ stats.amount_false }}</p>
+    <!-- Дополните этот блок полями статистики, которые вы хотите отобразить -->
+  {% else %}
+    <p>Статистика пользователя не найдена.</p>
+  {% endif %}
+
+</body>
+</html>

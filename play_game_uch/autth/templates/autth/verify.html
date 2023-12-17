@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type = "text/css" href = "{% static 'autth/css/style.css' %}" rel = "stylesheet"/>
+    <title>Верификация пользователя</title>
+</head>
+<body>
+
+  <h2>Введите код для верификации</h2>
+  <form id="verificationForm">
+    {% csrf_token %}
+    <label for="otp">Код верификации:</label>
+    <input type="text" id="otp" name="otp" required>
+    <button type="submit">Верифицировать</button>
+  </form>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="{% static 'autth/js/verify_script.js' %}"></script>
+
+</body>
+</html>
